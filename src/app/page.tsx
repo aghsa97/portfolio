@@ -15,36 +15,37 @@ function Badge(props: any) {
 }
 const projects = [
   {
+    title: 'PowerPace',
+    role: 'Frontend developer',
+    description: `I was involved building a fitness web app from scratch using the Scrum method. I designed almost all the interfaces in the front-end part, and worked hand-in-hand with the back-end developers to ensure a fully functional app. I primarily used JavaScript, HTML, CSS, and SQL.`,
+    repository: 'https://github.com/aghsa97/Fitness-app',
+    url: 'https://github.com/aghsa97/Fitness-app',
+    techs: []
+  },
+  {
+    title: 'Klikce',
+    role: 'FullStack Engineer',
+    description: `Worked on an independent project titled 'Klikce', collaborating only with a designer.
+      Given that the project was more of a learning experience, I focused on understanding and implementing best practices for the technologies I was using. This focus allowed me to deepen my understanding of these tools and how they interact with one another.`,
+    repository: 'https://github.com/aghsa97',
+    url: 'https://spottz.vercel.app/',
+    techs: []
+  },
+  {
     title: 'NiXTT',
     role: 'FullStack Engineer',
-    description: 'NiXTT is an open source task management tool.It allows you to create, manage and share tasks.It’s built with productivity, privacy and speed in mind.',
+    description: 'NiXTT is an open source task management tool. It allows you to create, manage and share tasks. It’s built with productivity, privacy and speed in mind.',
     repository: 'https://github.com/aghsa97/NiXTT-beta',
     url: 'https://nixtt-beta.vercel.app/',
     techs: ['NextJs', 'TypeScript', 'Tailwind', 'Prisma', 'PlanetScale']
-  },
-  {
-    title: 'MapSpot',
-    role: 'FullStack Engineer',
-    description: 'MapSpot is a web app that allows you to find the best places to visit in your city. It’s built with the T3 stack and uses the Google Maps API and Mapbox.',
-    repository: 'https://github.com/aghsa97',
-    url: '#',
-    techs: []
-  },
-  {
-    title: 'PowerPace',
-    role: 'Frontend developer',
-    description: 'I was involved building a fitness web app from scratch using the Agile method.I designed some of the interfaces in the front- end part, and worked hand -in -hand with the back - end developers to ensure a fully functional app.',
-    repository: 'https://github.com/aghsa97/Fitness-app',
-    url: '#',
-    techs: []
   },
 ]
 
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full max-w-screen-sm mx-auto justify-start my-32 gap-12">
-      <div className="backdrop-blur-sm border border-zinc-200 flex items-center justify-start px-12 py-6 gap-12 shadow-lg rounded-xl">
+    <main className="flex flex-col w-full max-w-screen-sm mx-auto justify-start mt-32 mb-12 gap-12 px-4 md:px-0">
+      <div className="backdrop-blur-sm border border-zinc-200 flex items-center justify-start p-8 md:px-12 md:py-6 gap-12 rounded-xl">
         <div className="flex flex-col items-start justify-center gap-6">
           <h1 className="text-2xl font-medium">
             hi, I&apos; m Agha 👋
@@ -121,11 +122,11 @@ export default function Home() {
             </Badge> and working on <a href="https://spottz.vercel.app/" target={'_blank'} className="underline decoration-2 underline-offset-2 hover:no-underline" >Klik<span className="text-green-600">ce</span></a> at night.
           </p>
         </div>
-        <Image src={'/profile-pic.png'} alt="me" width={150} height={150} className="rounded-full" />
+        <Image src={'/profile-pic.png'} alt="me" width={150} height={150} className="hidden md:flex rounded-full" />
       </div>
       <div className="flex flex-col items-center justify-start gap-4">
         {projects.map((project, index) => (
-          <Card key={index} className="backdrop-blur-sm shadow-lg rounded-xl">
+          <Card key={index} className="backdrop-blur-sm rounded-xl">
             <CardHeader>
               {project.role}
             </CardHeader>
@@ -143,8 +144,8 @@ export default function Home() {
           </Card>
         ))}
       </div>
-      <div className="backdrop-blur-sm border border-zinc-200 flex flex-col items-center justify-center px-12 py-6 gap-4 shadow-lg rounded-xl">
-        <p className="font-medium">You find me here</p>
+      <div className="backdrop-blur-sm border border-zinc-200 flex flex-col items-center justify-center px-12 py-6 gap-4 rounded-xl">
+        <p className="font-medium">Follow me here</p>
         <div className='flex items-center justify-center gap-6'>
           {socials.map((social, index) => (
             <a key={index} href={social.url} target={'_blank'}>
