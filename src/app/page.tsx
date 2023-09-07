@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { socials } from '@/configs/socials'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -122,7 +120,6 @@ export default function Home() {
             </Badge> and working on <a href="https://spottz.vercel.app/" target={'_blank'} className="underline decoration-2 underline-offset-2 hover:no-underline" >Klik<span className="text-green-600">ce</span></a> at night.
           </p>
         </div>
-        <Image src={'/profile-pic.png'} alt="me" width={150} height={150} className="hidden md:flex rounded-full" />
       </div>
       <div className="flex flex-col items-center justify-start gap-4">
         {projects.map((project, index) => (
