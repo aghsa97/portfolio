@@ -21,17 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className} style={{
-        backgroundImage: `url("/grainy.png")`
+        backgroundImage: `url("/grainy.png")`,
+        height: '100%'
       }}>
         {children}
-        {/* <footer className='absolute bottom-1 flex items-center border-4 border-neutral-950 rounded-full px-4 py-2 mb-2 max-w-screen-sm mx-auto gap-1'>
-          <p className='text-neutral-400/80 text-sm font-semibold'>made with <span className='text-red-500'>♥</span> by
-            <span className='mr-1'> <a href="https://www.linkedin.com/in/mohammed-agha/" target={'_blank'} className="underline text-neutral-300 hover:no-underline">@agha</a> </span>
-            •
-            <span className='mx-2'>See on <a href="https://github.com/aghsa97/portfolio" target={'_blank'} className="underline text-neutral-300 hover:no-underline">Github</a></span>
-            ©2023
-          </p>
-        </footer> */}
       </body>
     </html>
   )

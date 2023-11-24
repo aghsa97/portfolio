@@ -13,43 +13,35 @@ function Badge(props: any) {
 }
 const projects = [
   {
-    title: 'PowerPace',
-    role: 'Frontend developer',
-    description: `I was involved building a fitness web app from scratch using the Scrum method. I designed almost all the interfaces in the front-end part, and worked hand-in-hand with the back-end developers to ensure a fully functional app. I primarily used JavaScript, HTML, CSS, and SQL.`,
-    repository: 'https://github.com/aghsa97/Fitness-app',
-    url: 'https://github.com/aghsa97/Fitness-app',
-    techs: []
-  },
-  {
-    title: 'Klikce',
+    title: 'Klickce - Up on walls AB',
     role: 'FullStack Engineer',
-    description: `Worked on an independent project titled 'Klikce', collaborating only with a designer.
-      Given that the project was more of a learning experience, I focused on understanding and implementing best practices for the technologies I was using. This focus allowed me to deepen my understanding of these tools and how they interact with one another.`,
+    data: 'Apr 2023 - PRESENT',
+    description: `At Klickce, as a Fullstack Engineer, I led the software architecture design and technology stack selection. My primary achievement was enhancing app efficiency, cutting load times from 1.5 seconds to 500 milliseconds through optimizing API calls, SQL queries, and database tables.`,
     repository: 'https://github.com/aghsa97',
-    url: 'https://spottz.vercel.app/',
+    url: 'https://klickce.se/',
     techs: []
   },
   {
-    title: 'NiXTT',
-    role: 'FullStack Engineer',
-    description: 'NiXTT is an open source task management tool. It allows you to create, manage and share tasks. It’s built with productivity, privacy and speed in mind.',
-    repository: 'https://github.com/aghsa97/NiXTT-beta',
-    url: 'https://nixtt-beta.vercel.app/',
-    techs: ['NextJs', 'TypeScript', 'Tailwind', 'Prisma', 'PlanetScale']
+    title: 'PowerPace',
+    role: 'Frontend Engineer',
+    data: 'Aug 2021 - Jan 2022',
+    description: `As a Front-end Engineer at PowerPace, I collaborated closely with customers to define necessary features, leading the team as a Scrum master for a week. My role involved translating backlogs and user stories into implementable features, primarily focusing on front-end coding while coordinating with back-end developers.`,
+    repository: 'https://github.com/aghsa97/Fitness-app',
+    techs: []
   },
 ]
 
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full max-w-screen-sm mx-auto justify-start mt-32 mb-12 gap-12 px-4 md:px-0">
-      <div className="backdrop-blur-sm border border-zinc-200 flex items-center justify-start p-8 md:px-12 md:py-6 gap-12 rounded-xl">
-        <div className="flex flex-col items-start justify-center gap-6">
-          <h1 className="text-2xl font-medium">
-            hi, I&apos; m Agha 👋
+    <main className="flex flex-col w-full max-w-screen-sm mx-auto mt-32 mb-12 gap-12 px-4 md:px-0">
+      <div className="backdrop-blur-[2px] border border-zinc-200 flex items-center justify-start p-6 md:px-6 md:py-6 gap-12 rounded-xl">
+        <div className="flex flex-col items-start justify-center gap-3">
+          <h1 className="text-2xl font-bold">
+            Hi, I&apos;m Agha 👋
           </h1>
-          <p className="">
-            I&apos;m building serverless and open source solutions
+          <p className='text-sm'>
+            I&apos;m a software engineer building serverless solutions
             with <Badge href="https://nextjs.org">
               <svg
                 width="14"
@@ -117,36 +109,40 @@ export default function Home() {
                 </defs>
               </svg>
               Next.js
-            </Badge> and working on <a href="https://spottz.vercel.app/" target={'_blank'} className="underline decoration-2 underline-offset-2 hover:no-underline" >Klik<span className="text-green-600">ce</span></a> at night.
+            </Badge>
+            {' '}🚀
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-start gap-4">
         {projects.map((project, index) => (
-          <Card key={index} className="backdrop-blur-sm rounded-xl">
-            <CardHeader>
-              {project.role}
+          <Card key={index} className="backdrop-blur-[2px] rounded-xl">
+            <CardHeader className='flex flex-row items-center justify-between text-sm'>
+              <p>
+                {project.role}
+              </p>
+              <p className='text-xs font-normal text-zinc-500'>{project.data}</p>
             </CardHeader>
             <CardContent className="space-y-2">
-              <CardTitle>
+              <CardTitle className='font-bold'>
                 {project.title}
               </CardTitle>
               <CardDescription>
                 {project.description}
               </CardDescription>
             </CardContent>
-            <CardFooter>
-              <a href={project.url} target="_blank" className="text-sm">Check it here!</a>
+            <CardFooter className='flex justify-end'>
+              <a href={project.url ? project.url : project.repository} target="_blank" className="text-sm px-5 py-2.5 rounded-[10px] bg-zinc-900 hover:bg-zinc-950 text-white">I&apos;m curious</a>
             </CardFooter>
           </Card>
         ))}
       </div>
-      <div className="backdrop-blur-sm border border-zinc-200 flex flex-col items-center justify-center px-12 py-6 gap-4 rounded-xl">
+      <div className="backdrop-blur-[2px] border border-zinc-200 flex flex-col items-center justify-center px-12 py-6 gap-4 rounded-xl">
         <p className="font-medium">Follow me here</p>
         <div className='flex items-center justify-center gap-6'>
           {socials.map((social, index) => (
             <a key={index} href={social.url} target={'_blank'}>
-              <social.icon className="w-6 h-6 text-zinc-200 md:text-zinc-950 hover:-translate-y-1 hover:text-zinc-950 transition-all duration-150 ease-in" />
+              <social.icon className="w-6 h-6 text-zinc-950 hover:-translate-y-1 transition-all duration-150 ease-in" />
             </a>
           ))}
         </div>
