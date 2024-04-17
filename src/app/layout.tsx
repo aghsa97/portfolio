@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-import { Poppins } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Hi, my name is Agha, I'm building serverless and open source solutions with NextJs and working on NiXTT at night.`,
 }
 
-const font = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
+const font = Montserrat({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700',] })
 
 
 export default function RootLayout({
@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className} style={{
-        backgroundImage: `url("/grainy.png")`,
-        height: '100%'
+        backgroundColor: '#fafafa',
       }}>
         {children}
       </body>
